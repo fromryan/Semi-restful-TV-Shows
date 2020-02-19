@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <title>Add a New Show</title>
+    <style>
+        
+    
+    </style>
+</head>
+<body>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Add a New Show</h1>
+            <p class="lead"> Create a new TV show by providing title, network, released date and description.</p>
+            <form action='/create' method='POST'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Title</label>
+                    <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3" name='title'></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Network</label>
+                    <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3" name='network'></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="released_date">Released Date</label>
+                    <input type="date" name="released_date" id='released_date'>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3" name='description'></textarea>
+                </div>
+                <input id="create_button" class="btn btn-success" type="submit" value="Create" >
+            </form>
+        </div>
+    </div>    
+</body>
+</html>
